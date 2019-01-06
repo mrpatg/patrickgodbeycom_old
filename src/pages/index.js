@@ -7,13 +7,14 @@ export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
+    const { edges: repos } = data.allRepoPosts
 
     return (
       <Layout>
         <section className="section">
           <div className="container">
             <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
+              <h1 className="has-text-weight-bold is-size-2">Latest Posts</h1>
             </div>
             {posts
               .map(({ node: post }) => (
@@ -41,6 +42,37 @@ export default class IndexPage extends React.Component {
               ))}
           </div>
         </section>
+        <section className="section">
+          <div className="container">
+            <div className="content">
+              <h1 className="has-text-weight-bold is-size-2">Repo</h1>
+            </div>
+            {repos
+              .map(({ node: repo }) => (
+                <div
+                  className="content"
+                  style={{ border: '1px solid #333', padding: '2em 4em' }}
+                  key={repo.id}
+                >
+                  <p>
+                    <Link className="has-text-primary" to={repo.fields.slug}>
+                      {repo.frontmatter.title}
+                    </Link>
+                    <span> &bull; </span>
+                    <small>{repo.frontmatter.date}</small>
+                  </p>
+                  <p>
+                    {repo.excerpt}
+                    <br />
+                    <br />
+                    <Link className="button is-small" to={repo.fields.slug}>
+                      Keep Reading →
+                    </Link>
+                  </p>
+                </div>
+              ))}
+          </div>
+        </section>
       </Layout>
     )
   }
@@ -49,6 +81,9 @@ export default class IndexPage extends React.Component {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.array,
+    }),
+    allRepoPosts: PropTypes.shape({
       edges: PropTypes.array,
     }),
   }),
