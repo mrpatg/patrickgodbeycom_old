@@ -7,33 +7,34 @@ export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
+    const { edges: repos } = data.allRepoPosts
 
     return (
       <Layout>
         <section className="section">
           <div className="container">
             <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">Latest Posts</h1>
+              <h1 className="has-text-weight-bold is-size-2">Repo</h1>
             </div>
-            {posts
-              .map(({ node: post }) => (
+            {repos
+              .map(({ node: repo }) => (
                 <div
                   className="content"
                   style={{ border: '1px solid #333', padding: '2em 4em' }}
-                  key={post.id}
+                  key={repo.id}
                 >
                   <p>
-                    <Link className="has-text-primary" to={post.fields.slug}>
-                      {post.frontmatter.title}
+                    <Link className="has-text-primary" to={repo.fields.slug}>
+                      {repo.frontmatter.title}
                     </Link>
                     <span> &bull; </span>
-                    <small>{post.frontmatter.date}</small>
+                    <small>{repo.frontmatter.date}</small>
                   </p>
                   <p>
-                    {post.excerpt}
+                    {repo.excerpt}
                     <br />
                     <br />
-                    <Link className="button is-small" to={post.fields.slug}>
+                    <Link className="button is-small" to={repo.fields.slug}>
                       Keep Reading →
                     </Link>
                   </p>
@@ -50,7 +51,10 @@ IndexPage.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
-    })
+    }),
+    allRepoPosts: PropTypes.shape({
+      edges: PropTypes.array,
+    }),
   }),
 }
 
@@ -58,7 +62,7 @@ export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] },
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } }}
+      filter: { frontmatter: { templateKey: { eq: "repo-post" } }}
     ) {
       edges {
         node {
