@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props
-    const { edges: repos } = data.allRepoPosts
+    const { edges: repos } = data.allMarkdownRemark
 
     return (
       <Layout>
@@ -48,7 +48,7 @@ export default class IndexPage extends React.Component {
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
-    allRepoPosts: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
     })
   }),
@@ -56,7 +56,7 @@ IndexPage.propTypes = {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allRepoPosts(
+    allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] },
       filter: { frontmatter: { templateKey: { eq: "repo-post" } }}
     ) {
