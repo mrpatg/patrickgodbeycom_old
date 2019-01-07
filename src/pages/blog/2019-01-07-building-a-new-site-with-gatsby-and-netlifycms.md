@@ -10,6 +10,8 @@ tags:
 ---
 This is not fun. Just kidding. Well, sort of.
 
+![](/img/build_fails.png)
+
 Coming from what I will call WordPress-Privilege, it's been stupid easy to point, click, mash some buttons, and have a full site up and running in minutes. So it's a bit of a jump for me to switch to using not just a non-php based blogging system, but it's also using a static site generator called Gatsby, which is also using NetlifyCMS to manage the posts/pages, deploying and building from github commits, and I have very little experience using react. So, to say I am out of my element is an understatement. However, some hunting around, fiddling with the code, and several failed builds later, I think I get it.
 
 **First Thing I Did**
