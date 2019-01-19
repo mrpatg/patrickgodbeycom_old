@@ -37,10 +37,10 @@ const TemplateWrapper = ({ children }) => (
           <meta property="og:image" content="/img/og-image.jpg" />
         </Helmet>
         <div className="columns is-desktop">
-          <div className="column is-one-quarter">
+          <div className="column is-one-quarter-desktop">
           <Navbar />
           </div>        
-          <div className="column is-three-quarters">{children}</div>
+          <div className="column is-three-quarters-desktop">{children}</div>
         </div>
         <Footer />
       </div>
