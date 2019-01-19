@@ -76,6 +76,9 @@ const Navbar = class extends React.Component {
       <div className="is-hidden-touch">
         <aside class="menu">
           <ul class="menu-list">
+              <Link to="/" className="navbar-item" title="Logo">
+                <img src={logo} alt="Patrick Godbey" style={{ width: '143px' }} />
+              </Link>
               <Link className="navbar-item" to="/about">
                 About
               </Link>
