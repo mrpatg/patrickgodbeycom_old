@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
+import Footer from '../components/Footer'
 
 const Navbar = class extends React.Component {
 
@@ -64,6 +65,7 @@ const Navbar = class extends React.Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+              <Footer />
                 <span className="icon">
                   <img src={github} alt="Github" />
                 </span>
@@ -89,6 +91,7 @@ const Navbar = class extends React.Component {
                 Contact
               </Link>
           </ul>
+          <Footer />
         </aside>
       </div>
     </div>
