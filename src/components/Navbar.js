@@ -31,7 +31,7 @@ const Navbar = class extends React.Component {
  render() {
    return (
     <div>
-      <div className="mobile-container is-hidden-touch">
+      <div className="mobile-container is-hidden-desktop">
         <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
           <div className="container">
             <div className="navbar-brand">
@@ -73,7 +73,7 @@ const Navbar = class extends React.Component {
           </div>
         </nav>
       </div>
-      <div className="is-hidden-desktop">
+      <div className="is-hidden-touch">
         <aside class="menu">
           <p class="menu-label">
             General
