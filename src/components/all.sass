@@ -7,6 +7,8 @@ $patrickg-blue-invert: #fff
 $primary: $patrickg-blue
 $primary-invert: $patrickg-blue-invert
 $body-color: #333
+$navbar-height: 1rem
+
 
 .navbar .navbar-menu
   box-shadow:none !important
@@ -48,3 +50,16 @@ $body-color: #333
   background: $white-ter
 
 @import "~bulma"
+.columns
+  &.is-fullheight
+    min-height: calc(100vh - ( #{$navbar-height} - .75rem ) )
+    max-height: calc(100vh - ( #{$navbar-height} - .75rem ) )
+    height: calc(100vh - ( #{$navbar-height} - .75rem ) )
+    display: flex
+    flex-direction: row
+    justify-content: stretch
+    .column
+      overflow-y: auto
+.is-vertical-center 
+  display: flex;
+  align-items: center;

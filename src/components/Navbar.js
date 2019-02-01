@@ -32,7 +32,7 @@ const Navbar = class extends React.Component {
  render() {
    return (
     <div>
-      <div className="mobile-container is-hidden-desktop">
+      <div className="mobile-container is-hidden-desktop has-background-dark has-text-grey-light">
         <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
           <div className="container">
             <div className="navbar-brand">
@@ -75,24 +75,28 @@ const Navbar = class extends React.Component {
           </div>
         </nav>
       </div>
-      <div className="is-hidden-touch">
-        <aside class="menu">
-          <ul class="menu-list">
-              <Link to="/" className="navbar-item" title="Logo">
-                <img src={logo} alt="Patrick Godbey" style={{ width: '143px' }} />
+      <div className="is-vcentered is-hidden-touch is-fullheight has-text-centered has-text-white-ter ">
+        <div className="column">
+              <Link to="/" className="has-text-white-ter is-size-4" title="Logo">
+                Patrick Godbey
               </Link>
-              <Link className="navbar-item" to="/about">
+              <br />
+              <Link className="has-text-grey-lighter" to="/about">
                 About
               </Link>
-              <Link className="navbar-item" to="/repo">
+              <br />
+              <Link className="has-text-white-ter" to="/repo">
                 Repo
               </Link>
-              <Link className="navbar-item" to="/contact">
+              <br />
+              <Link className="has-text-white-ter" to="/contact">
                 Contact
               </Link>
-          </ul>
+              <br />
+        </div>
+        <div className="">
           <Footer />
-        </aside>
+        </div>
       </div>
     </div>
 

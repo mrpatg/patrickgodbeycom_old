@@ -35,8 +35,8 @@ const TemplateWrapper = ({ children }) => (
           <meta property="og:url" content="/" />
           <meta property="og:image" content="/img/og-image.jpg" />
         </Helmet>
-        <div className="columns is-desktop">
-          <div className="column is-one-quarter-desktop">
+        <div className="columns is-desktop is-fullheight">
+          <div className="column is-one-quarter-desktop has-background-dark ">
           <Navbar />
           </div>        
           <div className="column is-three-quarters-desktop">{children}</div>
