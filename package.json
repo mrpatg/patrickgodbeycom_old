@@ -1,7 +1,7 @@
 {
   "name": "patrickgodbeycom-netlifycms-bootstrap",
   "description": "Modified Netlify CMS, with bootstrap. For PatrickGodbey.com",
-  "version": "2",
+  "version": "1.9.5",
   "author": "Patrick Godbey",
   "dependencies": {
     "bootstrap": "^4.2.1",
