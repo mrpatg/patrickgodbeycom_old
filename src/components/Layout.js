@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from "gatsby"
 import Navbar from '../components/Navbar'
-import './all.sass'
+import './all.scss'
 
 const TemplateWrapper = ({ children }) => (
   <StaticQuery
@@ -35,11 +35,13 @@ const TemplateWrapper = ({ children }) => (
           <meta property="og:url" content="/" />
           <meta property="og:image" content="/img/og-image.jpg" />
         </Helmet>
-        <div className="columns is-desktop is-fullheight">
-          <div className="column is-one-quarter-desktop has-background-dark ">
-          <Navbar />
-          </div>        
-          <div className="column is-three-quarters-desktop">{children}</div>
+        <div className="container-fluid h-100 vh-100">
+          <div className="row h-100">
+            <div className="col-3 bg-dark">
+            <Navbar />
+            </div>        
+            <div className="col-9">{children}</div>
+          </div>
         </div>
         
       </div>

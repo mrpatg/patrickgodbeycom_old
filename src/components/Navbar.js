@@ -31,8 +31,8 @@ const Navbar = class extends React.Component {
  
  render() {
    return (
-    <div>
-      <div className="mobile-container is-hidden-desktop has-background-dark has-text-grey-light">
+    <div className="row">
+      <div className="col d-none d-sm-block d-md-block d-lg-none d-xl-none">
         <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
           <div className="container">
             <div className="navbar-brand">
@@ -75,27 +75,31 @@ const Navbar = class extends React.Component {
           </div>
         </nav>
       </div>
-      <div className="is-vcentered is-hidden-touch is-fullheight has-text-centered has-text-white-ter ">
-        <div className="column">
-              <Link to="/" className="has-text-white-ter is-size-4" title="Logo">
-                Patrick Godbey
-              </Link>
-              <br />
-              <Link className="has-text-grey-lighter" to="/about">
-                About
-              </Link>
-              <br />
-              <Link className="has-text-white-ter" to="/repo">
-                Repo
-              </Link>
-              <br />
-              <Link className="has-text-white-ter" to="/contact">
-                Contact
-              </Link>
-              <br />
+      <div className="col d-sm-none d-md-none d-lg-block d-xl-block h-100">
+        <div className="row">
+          <div className="col-8 pt-5 mx-auto justify-content-center">
+                <Link to="/" className="text-light" title="Logo">
+                  Patrick Godbey
+                </Link>
+                <br />
+                <Link className="text-light" to="/about">
+                  About
+                </Link>
+                <br />
+                <Link className="text-light" to="/repo">
+                  Repo
+                </Link>
+                <br />
+                <Link className="text-light" to="/contact">
+                  Contact
+                </Link>
+                <br />
+          </div>
         </div>
-        <div className="">
-          <Footer />
+        <div className="row text-muted">
+          <div className="col-8 mx-auto justify-content-center">
+            <Footer />
+          </div>
         </div>
       </div>
     </div>
