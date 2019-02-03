@@ -45,7 +45,7 @@ const Navbar = class extends React.Component {
                   </ul>
                 </p>
                 <hr className="light" />
-                <p className="text-muted">
+                <p className="">
                   <Footer />
                 </p>
           </div>
