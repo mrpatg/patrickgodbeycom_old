@@ -11,7 +11,7 @@ const Navbar = class extends React.Component {
     <div className="row">
       <div className="col h-100">
         <div className="row">
-          <div className="col-8 pt-5 mx-auto justify-content-center">
+          <div className="col-8 pt-5 mx-auto justify-content-center" id="navbar-container">
                 <p>
                   <Link to="/" className="text-light h3" title="Logo">
                     Patrick Godbey
@@ -23,17 +23,26 @@ const Navbar = class extends React.Component {
                 </p>
                 <hr className="light"/>
                 <p>
-                  <Link className="text-uppercase text-muted" to="/about">
-                    About
-                  </Link>
-                  <br />
-                  <Link className="text-uppercase text-muted" to="/repo">
-                    Repo
-                  </Link>
-                  <br />
-                  <Link className="text-uppercase text-muted" to="/contact">
-                    Contact
-                  </Link>
+                  <ul class="list-group">
+                  <Link className="list-group-item text-uppercase text-muted" to="/">
+                      Home
+                    </Link>
+                    <Link className="list-group-item text-uppercase text-muted" to="/about">
+                      About
+                    </Link>
+                    <Link className="list-group-item text-uppercase text-muted" to="/repo">
+                      Repo
+                    </Link>
+                    <Link className="list-group-item text-uppercase text-muted" to="/contact">
+                      Contact
+                    </Link>
+                    <a href="//github.com/mrpatg" className="list-group-item text-uppercase text-muted">
+                      GitHub
+                    </a>
+                    <a href="//twitter.com/mrpatg" className="list-group-item text-uppercase text-muted">
+                      Twitter
+                    </a>
+                  </ul>
                 </p>
                 <hr className="light" />
                 <p className="text-muted">

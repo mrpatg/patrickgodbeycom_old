@@ -13,28 +13,30 @@ export default class IndexPage extends React.Component {
         <section className="section">
           <div className="container">
             <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">Latest Posts</h1>
+              <span className="h2 mb-5 d-block">
+                All the stuff
+              </span>
             </div>
             {posts
               .map(({ node: post }) => (
                 <div
                   className="content"
-                  style={{ border: '1px solid #333', padding: '2em 4em' }}
                   key={post.id}
                 >
-                  <p>
-                    <Link className="has-text-primary" to={post.fields.slug}>
+                  <p className="text-left h4">
+                    <Link className="text-dark" to={post.fields.slug}>
                       {post.frontmatter.title}
                     </Link>
-                    <span> &bull; </span>
+                  </p>
+                  <p className="text-left text-muted">
                     <small>{post.frontmatter.date}</small>
                   </p>
-                  <p>
+                  <p className="text-left">
                     {post.excerpt}
                     <br />
                     <br />
-                    <Link className="button is-small" to={post.fields.slug}>
-                      Keep Reading →
+                    <Link className="btn btn-light" to={post.fields.slug}>
+                      Read the rest of it →
                     </Link>
                   </p>
                 </div>
