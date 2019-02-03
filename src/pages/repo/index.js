@@ -11,9 +11,9 @@ export default class IndexPage extends React.Component {
     return (
       <Layout>
         <section className="section">
-          <div className="container">
+          <div className="container text-justify">
             <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">Repo</h1>
+              <h1 className="text-center">Repo</h1>
             </div>
             {repos
               .map(({ node: repo }) => (

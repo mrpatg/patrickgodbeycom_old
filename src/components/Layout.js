@@ -42,7 +42,7 @@ const TemplateWrapper = ({ children }) => (
             <Navbar />
             </div>
                    
-            <div className="col col-lg-9 col-xl-9">{children}</div>
+            <div className="col text-center pt-5 col-lg-9 col-xl-9">{children}</div>
           </div>
         </div>
         
